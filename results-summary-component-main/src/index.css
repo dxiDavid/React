@@ -55,4 +55,15 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+main{
+  display: flex;
+}
 
+.summary-stat{
+  display: flex;
+  justify-content: space-between;
+}
+
+.stat-type{
+  display: flex;
+}
