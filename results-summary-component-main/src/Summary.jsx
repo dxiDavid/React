@@ -37,32 +37,3 @@ function summary(){
   }
 
 export default summary  
-
-{/* <div className='summary-stat'>
-<div className='stat-type'>
-  <img src={ memoryIcon } alt='icon'/>
-  <p>Memory</p>
-</div>
-<div className='stat-value'>
-  <p> <span>92</span> / 100</p>
-</div>
-</div>
-<div className='summary-stat'>
-<div className='stat-type'>
-  <img src={ verbalIcon } alt='icon'/>
-  <p>Verbal</p>
-</div>
-<div className='stat-value'>
-  <p> <span>61</span> / 100</p>
-</div>
-</div>
-<div className='summary-stat'>
-<div className='stat-type'>
-  <img src={ visualIcon } alt='icon'/>
-  <p>Visual</p>
-</div>
-<div className='stat-value'>
-  <p> <span>72</span> / 100</p>
-</div>
-</div>
-</div> */}

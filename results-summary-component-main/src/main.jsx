@@ -10,6 +10,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <Results />
     <Summary />
   </main>
-    
   </React.StrictMode>,
 )
