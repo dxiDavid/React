@@ -2,10 +2,14 @@
 
   /*_____Primary_____*/
 
-  --Light-red: hsl(0, 100%, 67%);
-  --Orangey-yellow: hsl(39, 100%, 56%);
-  --Green-teal: hsl(166, 100%, 37%);
-  --Cobalt-blue: hsl(234, 85%, 45%);
+  --Light-red: hsla(0, 100%, 67%, 0.103);
+  --Light-red-stat-type-name: hsl(0, 100%, 67%);
+  --Orangey-yellow: hsl(39, 100%, 56%, 0.103);
+  --Orangey-yellow-stat-type-name: hsl(39, 100%, 56%);
+  --Green-teal: hsl(166, 100%, 37%, 0.103);
+  --Green-teal-stat-type-name: hsl(166, 100%, 37%);
+  --Cobalt-blue: hsl(234, 85%, 45%, 0.103);
+  --Cobalt-blue-stat-type-name: hsl(234, 85%, 45%);
 
   /*_______Gradients______*/
 
@@ -20,7 +24,9 @@
   --White: hsl(0, 0%, 100%);
   --Pale-blue: hsl(221, 100%, 96%);
   --Light-lavender: hsl(241, 100%, 89%);
+  --darker-lavender: hsl(241, 48%, 80%);
   --Dark-gray-blue: hsl(224, 30%, 27%);
+  --light-gray-blue: hsla(224, 30%, 27%, 0.479);
 
   /*Font*/
   --fw-regular: 500;
@@ -30,7 +36,9 @@
   --fs-smaller: 0.65rem;
   --fs-small: 0.95rem;
   --fs-normal: 1rem;
+  --fs-medium: 1.75rem;
   --fs-large: 3rem;
+  --fs-larger: 3.5rem;
 }
 
 *{
@@ -61,19 +69,17 @@ main{
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  border-radius: 2rem;
 }
 
 
 .results-container{
   color: var(--White);
-  background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Cobalt-blue));
-  padding: 2rem;
+  background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+  padding: 1.5rem;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
+  justify-content: space-around;
+  align-items: center; 
   border-bottom-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
 }
@@ -83,8 +89,6 @@ main{
 }
 
 .results{
-  display: flex;
-  flex-direction: column;
   gap: 1rem;
 }
 
@@ -103,9 +107,6 @@ main{
 }
 
 .results-message{
-  padding: 0.75rem;
-  display: flex;
-  flex-direction: column;
   gap: 0.5rem;
 }
 
@@ -114,6 +115,48 @@ main{
   color: var(--Light-lavender);
 }
 
+.summary-container{
+  padding: 0.25rem 2rem;
+  gap: 1rem;
+}
+
+.summary-container h3{
+  color: var(--Dark-gray-blue);
+}
+
+.summary-stats-container{
+  gap: 1rem;
+}
+
+.summary-stat:nth-child(1){
+  background-color: var(--Light-red);
+}
+.summary-stat:nth-child(1) .stat-type-name{
+  color: var(--Light-red-stat-type-name);
+}
+.summary-stat:nth-child(2){
+  background-color: var(--Orangey-yellow);
+}
+.summary-stat:nth-child(2) .stat-type-name{
+  color: var(--Orangey-yellow-stat-type-name);
+}
+.summary-stat:nth-child(3){
+  background-color: var(--Green-teal);
+}
+.summary-stat:nth-child(3) .stat-type-name{
+  color: var(--Green-teal-stat-type-name);
+}
+.summary-stat:nth-child(4){
+  background-color: var(--Cobalt-blue);
+}
+.summary-stat:nth-child(4) .stat-type-name{
+  color: var(--Cobalt-blue-stat-type-name);
+}
+
+.summary-stat{
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
 
 .summary-stat{
   display: flex;
@@ -122,4 +165,76 @@ main{
 
 .stat-type{
   display: flex;
+  gap: 0.75rem;
+}
+
+.stat-type p{
+  font-weight: var(--fw-bold);
+}
+
+.stat-value{
+  color: var(--light-gray-blue);
+  font-weight: var(--fw-bold);
+}
+
+span{
+  color: var(--Dark-gray-blue);
+}
+
+button{
+  cursor: pointer;
+  padding: 1rem;
+  border: 0;
+  border-radius: 10rem;
+  font-size: var(--fs-normal);
+  font-weight: var(--fw-bold);
+  color: var(--White);
+  background-color: var(--Dark-gray-blue);
+}
+
+button:hover{
+  background-image: linear-gradient(to bottom, var(--Light-slate-blue), var(--Light-royal-blue));
+}
+
+@media screen and (min-width: 560px) {
+  body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  main{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    max-width: 42rem;
+    margin: 0.5rem;
+    box-shadow: 14px 10px 20px 10px hsla(224, 30%, 27%, 0.164);
+  }
+  .results-container{
+    border-radius: 2rem;
+  }
+  .result-numbers{
+    padding: 2.5rem 3.5rem;
+  }
+  .result-numbers h1{
+    font-size: var(--fs-larger);
+  }
+  .results-message p{
+    padding: 0 2rem;
+  }
+  .results-message h2{
+    font-size: var(--fs-medium);
+  }
+  .summary-container{
+    gap: 2rem;
+    padding: 2.25rem 1.5rem;
+  }
+  .summary-container h3{
+    font-size: 1.35rem;
+  }
+  .summary-results{
+    gap: 1rem;
+  }
 }

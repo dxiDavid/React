@@ -5,7 +5,7 @@ function summary_stat(props){
         <div className='summary-stat'>
           <div className='stat-type'>
             <img src={ props.img } alt='icon'/>
-            <p>{ props.type }</p>
+            <p className="stat-type-name">{ props.type }</p>
           </div>
           <div className='stat-value'>
             <p> <span>{ props.value }</span> / 100</p>
