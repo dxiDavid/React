@@ -6,9 +6,7 @@ import './index.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-  <main>
     <Results />
     <Summary />
-  </main>
   </React.StrictMode>,
 )

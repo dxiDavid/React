@@ -210,7 +210,7 @@ button:hover{
     gap: 0;
     max-width: 42rem;
     margin: 0.5rem;
-    box-shadow: 14px 10px 20px 10px hsla(224, 30%, 27%, 0.164);
+    box-shadow: 14px 10px 20px -7px hsla(224, 30%, 27%, 0.185);
   }
   .results-container{
     border-radius: 2rem;
