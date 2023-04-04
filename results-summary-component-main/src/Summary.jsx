@@ -9,22 +9,22 @@ function summary(){
           <h3>Summary</h3>
             <div className='summary-stats-container flex-column'>
               <Summary
-                  img = './src/assets/images/icon-reaction.svg'
+                  img = './public/icon-reaction.svg'
                   type = 'Reaction'
                   value = {80}
                 />
               <Summary 
-                  img = './src/assets/images/icon-memory.svg'
+                  img = './public/icon-memory.svg'
                   type = 'Memory'
                   value = {92}
               />
               <Summary 
-                  img = './src/assets/images/icon-verbal.svg'
+                  img = './public/icon-verbal.svg'
                   type = 'Verbal'
                   value = {61}
               />
               <Summary 
-                  img = './src/assets/images/icon-visual.svg'
+                  img = './public/icon-visual.svg'
                   type = 'Visual'
                   value = {72}
               />
