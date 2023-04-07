@@ -109,5 +109,7 @@ select {
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
+  display: grid;
+  place-items: center;
 }
 
