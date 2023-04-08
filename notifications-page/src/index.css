@@ -109,7 +109,30 @@ select {
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  display: grid;
-  place-items: center;
+  min-height: 100vh; /*Might change in the future since it could occupy the entire page*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main{
+  
+  padding: 2rem;
+}
+
+.profile-picture{
+  max-width: 3rem;
+}
+
+.notification-details{
+  display: flex;
+  gap: 0.5rem;
+}
+
+.notification-container{
+  display: flex;
+  gap: 2rem;
+  padding: 0.75rem;
 }
 
