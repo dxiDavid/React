@@ -117,22 +117,32 @@ body {
 }
 
 main{
-  
+  /*max-width: 45rem;*/ 
   padding: 2rem;
+}
+
+.notification-container{
+  display: flex;
+  gap: 1rem;
+  padding: 0.75rem;
 }
 
 .profile-picture{
   max-width: 3rem;
 }
 
-.notification-details{
+.notification-content{}
+
+.notification-header{
   display: flex;
-  gap: 0.5rem;
 }
 
-.notification-container{
+.notification-type{
   display: flex;
-  gap: 2rem;
-  padding: 0.75rem;
+  flex-direction: row;
+  gap: 1rem;
 }
 
+.notification-type{
+  background-color: rgba(255, 0, 0, 0.123);
+}

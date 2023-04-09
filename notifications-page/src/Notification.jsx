@@ -4,38 +4,72 @@ function Notification_Template(props){
 
   return(
       <div className="notification-container">
+
         <div className="profile-picture">
           <img src={ props.profile_picture } alt="profile-picture"/>
         </div>
         <div className="notification-content">
-          <div className="notification-details">
-            <div className="profile-name">
-              <p>{ props.name }</p>
+            
+            <div className="notification-details">
+            <p className="notification-header">
+                <span>{ props.name }</span> 
+
+                {
+                  props.notificationType.isReaction ===true && 
+                  <>
+                    <span className="notification-type">reacted to your recent post</span>
+                    <span className="notification-reference">{props.notificationReference}</span>
+                  </>
+                }
+
+                {
+                  props.notificationType.isNewFollower ===true && 
+                  <><span className="notification-type"></span>followed you</>
+                }
+
+                {
+                  props.notificationType.isJoinedARelatedGroup ===true && 
+                  <>
+                    <span className="notification-type">joined your group</span> 
+                    <span className="notification-reference">{props.group}</span>
+                  </>
+                }
+
+                {
+                  props.notificationType.isLeftRelatedGroup ===true && 
+                  <>
+                    <span className="notification-type">left the group</span> 
+                    <span className="notification-reference">{props.group}</span>
+                  </>
+                }
+
+                { 
+                  props.notificationType.isPrivateMesage ===true && 
+                  <>
+                    <p>sent you a private message</p> 
+                    <div className="private-message"><p>{props.message}</p></div>
+                  </>
+                }
+
+                {
+                  props.notificationType.isComment ===true && 
+                  <>
+                    <span className="notification-type">commented on your picture</span>
+                    <span className="notification-reference">{props.notificationReference}</span>
+                  </>
+                }
+            </p>
+
+                <div className="red-dot"></div>
             </div>
-            <div className="notification-type">
-              {props.notificationType.isReaction ===true && <p>reacted to your recent post {props.notificationReference}</p>}
-              {props.notificationType.isNewFollower ===true && <p>followed you</p>}
-              {props.notificationType.isJoinedARelatedGroup ===true && <p>joined your group {props.group}</p>}
-              {props.notificationType.isLeftRelatedGroup ===true && <p>left the group {props.group}</p>}
-              {props.notificationType.isPrivateMesage ===true && 
-                <>
-                  <p>sent you a private message</p> 
-                  <div className="private-message"><p>{props.message}</p></div>
-                </>}
-              {props.notificationType.isComment ===true && <p>commented on your picture</p>}
-            </div>
-            <div className="notification-reference">
-              {/*Implement conditional rendering for image reference*/}
-              <p>{ }</p>
-              <div className="red-dot"></div>
-            </div>
-          </div>
+        
           <div className="notification-time">
             <p>
                 {props.howLongAgo}
             </p>
           </div>
         </div>
+
       </div>
   )
 }
