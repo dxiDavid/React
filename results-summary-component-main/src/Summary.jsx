@@ -1,4 +1,8 @@
 import Summary from './summary_stat'
+import reactionIcon from './assets/images/icon-reaction.svg'
+import memoryIcon from './assets/images/icon-memory.svg'
+import verbalIcon from './assets/images/icon-verbal.svg'
+import visualIcon from './assets/images/icon-visual.svg'
 
 function summary(){
   
@@ -9,22 +13,22 @@ function summary(){
           <h3>Summary</h3>
             <div className='summary-stats-container flex-column'>
               <Summary
-                  img = './public/icon-reaction.svg'
+                  img = {reactionIcon}
                   type = 'Reaction'
                   value = {80}
                 />
               <Summary 
-                  img = './public/icon-memory.svg'
+                  img = {memoryIcon}
                   type = 'Memory'
                   value = {92}
               />
               <Summary 
-                  img = './public/icon-verbal.svg'
+                  img = {verbalIcon}
                   type = 'Verbal'
                   value = {61}
               />
               <Summary 
-                  img = './public/icon-visual.svg'
+                  img = {visualIcon}
                   type = 'Visual'
                   value = {72}
               />
