@@ -1,25 +1,18 @@
 import arrowIcon from "./assets/icon-arrow-down.svg"
 import { useState } from "react"
+import "./index.css"
+
 function faq(props) {
-  
-  console.log()
 
-  function reveal(){
-    console.log("revealed")
-  }
-
-  const style = {
-    backgroundColor: props.on ? "blue" : "#141414"
-  }
 
   return (
     <>  
-    <div style={style} className="faq-container">
-        <div className="question" onClick = {reveal}>
+    <div className="faq">
+        <div className="question" onClick = {() => props.handleClick(props.id)}>
           <h3>{props.question}</h3> 
-          <img src={arrowIcon} alt="arrow"/>
+          <img className="arrow-down" src={arrowIcon} alt="arrow"/>
         </div>
-        <div className="answer">{props.answer}</div>
+        <div className={props.on ? "reveal" : "answer"}>{props.answer}</div>
     </div>
     </>
   )

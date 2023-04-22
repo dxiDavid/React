@@ -4,7 +4,7 @@ export default [
         question: "Question number one",
         answer: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                  Quidem ratione inventore delectus accusamus mollitia cumque.`,
-        on: true
+        on: false
     },
     {
         id: 2,
@@ -19,20 +19,5 @@ export default [
         answer: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
                  Quidem ratione inventore delectus accusamus mollitia cumque.`,
         on: false
-    },
-    {
-        id: 4,
-        question: "Question number four",
-        answer: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                 Quidem ratione inventore delectus accusamus mollitia cumque.`,
-        on: true
-    },
-    {
-        id: 5,
-        question: "Question number five",
-        answer: `Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
-                 Quidem ratione inventore delectus accusamus mollitia cumque.`,
-        on: false
-    }
-    
+    }  
 ]
