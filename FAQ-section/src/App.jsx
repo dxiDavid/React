@@ -7,7 +7,11 @@ function App(){
     const [isVisible, setIsVisible] = useState(data)
 
     function toggle(id){
-        console.log("add a function that tracks state and changes classes here here")
+        setIsVisible(prevIsVisible => {
+            return prevIsVisible.map((question) => {
+                return question.id === id ? { ...question, on:!question.on } : question;
+            })
+        })
     }
 
     const dataElements = data.map(item => {
@@ -17,7 +21,7 @@ function App(){
                     question = {item.question} 
                     answer = {item.answer} 
                     visible = {item.on} 
-                    handleClick = {toggle}/>
+                    handleClick = {() => toggle(item.id)}/>
     })
 
     return(
