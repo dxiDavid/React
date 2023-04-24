@@ -4,29 +4,33 @@ import { useState } from "react"
 
 function App(){
 
-    const [isVisible, setIsVisible] = useState(data)
+    const [selected, setSelected] = useState(null)
 
-    function toggle(id){
-        setIsVisible(prevIsVisible => {
-            return prevIsVisible.map((question) => {
-                return question.id === id ? { ...question, on:!question.on } : question;
-            })
-        })
+    const toggle = (i) => {
+        if(selected === i){
+            return setSelected(null)
+            console.log("selected")
+        }
+        setSelected(i)
     }
 
-    const dataElements = data.map(item => {
-        return <Faq_component 
-                    key = {item.id} 
-                    id = {item.id} 
-                    question = {item.question} 
-                    answer = {item.answer} 
-                    visible = {item.on} 
-                    handleClick = {() => toggle(item.id)}/>
+    const faq = data.map((item, index) => {
+        return (
+            <Faq_component 
+                key = {item.id}
+                id = {item.id}
+                question = {item.question}
+                answer = {item.answer}
+                handleClick = {() => toggle(index)}
+                selected = {selected}
+                index = {index}
+            />
+        )
     })
 
     return(
-        <div className="faq-container">
-            {dataElements}
+        <div className="wrapper">
+            {faq}
         </div>
     )
 }
