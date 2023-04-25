@@ -11,14 +11,15 @@
   --Light-grayish-blue-1: hsl(211, 68%, 94%);
   --Light-grayish-blue-2: hsl(205, 33%, 90%);
   --Grayish-blue: hsl(219, 14%, 63%);
+  --Lighter-Grayish-blue: hsla(218, 14%, 63%, 0.658);
   --Dark-grayish-blue: hsl(219, 12%, 42%);
   --Very-dark-blue: hsl(224, 21%, 14%);
 
   /*Fonts*/
 
-	--fs-small: 0.75rem;
+	--fs-small: 0.95rem;
 	--fs-medium:1rem;
-	--fs-large:3rem;
+	--fs-large:1.5rem;
 	--fw-light: 200;
 	--fw-regular: 400;
 	--fw-medium: 500;
@@ -116,33 +117,99 @@ body {
   align-items: center;
 }
 
-main{
-  /*max-width: 45rem;*/ 
+.container{
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.171);
   padding: 2rem;
+  border-radius: var(--soft-edges);
+  width: 100%;
+  max-width: 43rem;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.header{
+  display: flex;
+  justify-content: space-between;
+}
+
+h1{
+  font-size: var(--fs-large);
+  color: var(--Very-dark-blue);
+}
+
+.title{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notification-count{
+  background-color: var(--Blue);
+  color: var(--White);
+  /* font-size: var(--fs-medium); */
+  font-weight: var(--fw-extra-bold);
+  padding: 0rem 0.75rem;
+  border-radius: var(--soft-edges);
+}
+
+.mark-as-read{
+  border: 0;
+  background-color: transparent;
+  font-size: var(--fs-small);
+  color: var(--Dark-grayish-blue);
+  cursor: pointer;
 }
 
 .notification-container{
   display: flex;
   gap: 1rem;
-  padding: 0.75rem;
+  padding: 1rem;
+  background-color: var(--Very-light-grayish-blue);
+  border-radius: var(--soft-edges);
 }
 
-.profile-picture{
+.avatar{
   max-width: 3rem;
 }
 
-.notification-content{}
-
-.notification-header{
-  display: flex;
+.notifications{
+  padding: 1rem;
 }
 
-.notification-type{
+.notification-content{
   display: flex;
   flex-direction: row;
-  gap: 1rem;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.avatar-name{
+  color: var(--Very-dark-blue);
+  font-weight: var(--fw-bold);
 }
 
 .notification-type{
-  background-color: rgba(255, 0, 0, 0.123);
+  color: var(--Grayish-blue);
+}
+
+.notification-reference{
+  font-weight: var(--fw-bold);
+}
+
+.dark-greyish-blue{
+  color: var(--Dark-grayish-blue);
+}
+
+.dot{
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: var(--Red);
+  border-radius: var(--rounded-edges);
+  margin-top: 0.5rem;
+}
+
+.notification-duration{
+  color: var(--Lighter-Grayish-blue);
 }
