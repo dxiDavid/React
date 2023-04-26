@@ -9,7 +9,6 @@ function App(){
     const toggle = (i) => {
         if(selected === i){
             return setSelected(null)
-            console.log("selected")
         }
         setSelected(i)
     }
