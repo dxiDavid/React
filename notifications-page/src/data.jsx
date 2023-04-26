@@ -15,8 +15,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
-            isRead: false
         },
+        isRead: false,
         notificationReference: "My first tournament today",
         howLongAgo: "1m ago"
     },
@@ -35,8 +35,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
-            isRead: false
         },
+        isRead: false,
         notificationReference: null,
         howLongAgo: "5m ago"
     },
@@ -55,8 +55,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: true,
             isLeftRelatedGroup: false,
-            isRead: false
         },
+        isRead: false,
         notificationReference: "My first tournament today",
         howLongAgo: "1 day ago"
     },
@@ -77,8 +77,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
-            isRead: false
         },
+        isRead: false,
         notificationReference: null,
         howLongAgo: "5 days ago"
     },
@@ -97,9 +97,9 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
-            isRead: false
         },
-        notificationReference: "picture path",
+        isRead: false,
+        notificationReference: "Place Image here",
         howLongAgo: "1 week ago"
     },
     {
@@ -117,8 +117,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
-            isRead: false
         },
+        isRead: false,
         notificationReference: "end-game strategies to increase your win rate",
         howLongAgo: "2 weeks ago"
     },
@@ -137,8 +137,8 @@ export default [
             isUnfollowedUser: false,
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: true,
-            isRead: false
         },
+        isRead: false,
         notificationReference: null,
         howLongAgo: "2 weeks ago"
     },

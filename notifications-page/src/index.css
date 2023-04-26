@@ -122,9 +122,14 @@ body {
   padding: 2rem;
   border-radius: var(--soft-edges);
   width: 100%;
-  max-width: 43rem;
+  max-width: 45rem;
   display: grid;
   grid-template-columns: 1fr;
+}
+.wrapper{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .header{
@@ -161,6 +166,10 @@ h1{
   cursor: pointer;
 }
 
+.mark-as-read:hover{
+  color: var(--Blue);
+}
+
 .notification-container{
   display: flex;
   gap: 1rem;
@@ -186,8 +195,13 @@ h1{
 }
 
 .avatar-name{
+  text-decoration: none;
   color: var(--Very-dark-blue);
   font-weight: var(--fw-bold);
+}
+
+.avatar-name:hover{
+  color: var(--Blue);
 }
 
 .notification-type{
@@ -195,7 +209,12 @@ h1{
 }
 
 .notification-reference{
+  text-decoration: none;
   font-weight: var(--fw-bold);
+}
+
+.notification-reference:hover{
+  color: var(--Blue);
 }
 
 .dark-greyish-blue{
@@ -213,3 +232,5 @@ h1{
 .notification-duration{
   color: var(--Lighter-Grayish-blue);
 }
+
+/*Responsive breakpoint at 500px*/
