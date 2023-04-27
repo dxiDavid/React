@@ -122,7 +122,7 @@ body {
   padding: 2rem;
   border-radius: var(--soft-edges);
   width: 100%;
-  max-width: 45rem;
+  max-width: 47rem;
   display: grid;
   grid-template-columns: 1fr;
 }
@@ -172,10 +172,31 @@ h1{
 
 .notification-container{
   display: flex;
+  flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   background-color: var(--Very-light-grayish-blue);
   border-radius: var(--soft-edges);
+}
+
+.notification-header{
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+}
+
+.private-message{
+  border: 1px solid var(--Lighter-Grayish-blue); 
+  padding: 1rem;
+  max-width: 35rem;
+  margin-left: 4rem;
+  text-decoration: none;
+  color: var(--Grayish-blue);
+  border-radius: var(--soft-edges);
+}
+
+.private-message:hover{
+  background-color: var(--Light-grayish-blue-1);
 }
 
 .avatar{
@@ -215,6 +236,10 @@ h1{
 
 .notification-reference:hover{
   color: var(--Blue);
+}
+
+.post{
+  max-width: 3rem;
 }
 
 .dark-greyish-blue{

@@ -1,30 +1,9 @@
 import data from "./data"
-import Notification from "./Notification"
 import { useState } from "react"
 
 export default function App(){
 
-    const [isRead, setIsRead] = useState(data)
-
-    function toggleRead(index){
-        //Make a function that loops through the list of items and  checks whether a notification has been read
-    }
-    
-
-    const notification = data.map((item, index) => {
-        return(
-            <Notification 
-                key = {item.id}
-                name = {item.name}
-                profile_picture = {item.profile_picture}
-                notificationReference = {item.notificationReference}
-                howLongAgo = {item.howLongAgo}
-                isRead = {isRead}
-                index = {index}
-                handleClick = {() => toggleRead(index)}
-            />
-        )
-    })
+    const [notifications, setnotifications] = useState(data)
 
     return(
         <div className="container">
@@ -32,7 +11,7 @@ export default function App(){
                 <div className="title">
                     <h1>Notifications</h1>
                     <div>
-                        <p className="notification-count">{data.length}</p>
+                        <p className="notification-count">{notifications && notifications.filter(n => n.isRead).length}</p>
                     </div>
                 </div>
                 <button className="mark-as-read">Mark all as read</button>
@@ -40,7 +19,39 @@ export default function App(){
             <div className="notifications">
                 <div className="wrapper">
 
-                    { notification }
+                    { notifications.map(item => {
+                        return (
+                            <div className="notification-container" key={item.id}>
+                                <div className="notification-header">
+                                <a href="#">
+                                    <img src={item.profile_picture} className="avatar" alt={item.name}/>
+                                </a>
+                                <div className="notification-content">
+                                    <div className="notification">
+                                        <p className="notification-text">
+                                            <a href="#" className="avatar-name">{item.name}</a> 
+                                            {item.notificationType.isReaction && <span className="notification-type">&nbsp; Reacted to your recent post</span>} 
+                                            {item.notificationType.isComment && <> <span className="notification-type">&nbsp; commented on your picture</span> </>} 
+                                            {item.notificationType.isPrivateMesage && <span className="notification-type">&nbsp; sent you a private message</span>} 
+                                            {item.notificationType.isNewFollower && <span className="notification-type">&nbsp; Followed you</span>}  
+                                            {item.notificationType.isJoinedARelatedGroup && <span className="notification-type">&nbsp; Has joined your group</span>} 
+                                            {item.notificationType.isLeftRelatedGroup && <span className="notification-type">&nbsp; left the group</span>} 
+                                            {item.notificationType.isComment 
+                                                ? <div><a href="#"><img className="post" src={item.notificationReference} alt="post"/></a></div>
+                                                :   <a href="#" className="dark-greyish-blue notification-reference">&nbsp;
+                                                        {item.notificationReference}
+                                                    </a> 
+                                            }
+                                        </p>
+                                        <p className="notification-duration">{item.howLongAgo}</p> 
+                                    </div>
+                                    {item.isRead && <div className="dot"></div>}
+                                </div>
+                                </div>
+                                {item.notificationType.isPrivateMesage && <a href="#" className="private-message">{item.message}</a>}
+                            </div>
+                        )
+                    }) }
 
                 </div>
             </div>
