@@ -16,7 +16,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: "My first tournament today",
         howLongAgo: "1m ago"
     },
@@ -36,7 +36,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: null,
         howLongAgo: "5m ago"
     },
@@ -56,7 +56,7 @@ export default [
             isJoinedARelatedGroup: true,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: "Chess Club",
         howLongAgo: "1 day ago"
     },
@@ -78,7 +78,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: null,
         howLongAgo: "5 days ago"
     },
@@ -98,7 +98,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: "/src/assets/image-chess.webp",
         howLongAgo: "1 week ago"
     },
@@ -118,7 +118,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: false,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: "end-game strategies to increase your win rate",
         howLongAgo: "2 weeks ago"
     },
@@ -138,7 +138,7 @@ export default [
             isJoinedARelatedGroup: false,
             isLeftRelatedGroup: true,
         },
-        isRead: true,
+        isUnread: true,
         notificationReference: "Chess Club",
         howLongAgo: "2 weeks ago"
     },

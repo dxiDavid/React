@@ -3,7 +3,17 @@ import { useState } from "react"
 
 export default function App(){
 
-    const [notifications, setnotifications] = useState(data)
+    const [notifications, setNotifications] = useState(data)
+
+    function markAsRead(id){
+       setNotifications(prev => prev.map(item => (
+            item.id === id ? {...item, isUnread: false} : item
+       )))
+    }
+
+    function markAllAsRead(id){
+        setNotifications(prev => prev.map(item => ({...item, isUnread: false})))
+    }
 
     return(
         <div className="container">
@@ -11,17 +21,17 @@ export default function App(){
                 <div className="title">
                     <h1>Notifications</h1>
                     <div>
-                        <p className="notification-count">{notifications && notifications.filter(n => n.isRead).length}</p>
+                        <p className="notification-count">{notifications && notifications.filter(n => n.isUnread).length}</p>
                     </div>
                 </div>
-                <button className="mark-as-read">Mark all as read</button>
+                <button className="mark-as-read" onClick={markAllAsRead}>Mark all as read</button>
             </div>
             <div className="notifications">
                 <div className="wrapper">
 
-                    { notifications.map(item => {
+                    {notifications && notifications.map(item => {
                         return (
-                            <div className="notification-container" key={item.id}>
+                            <div className="notification-container" key={item.id} onClick={() => markAsRead(item.id)}>
                                 <div className="notification-header">
                                 <a href="#">
                                     <img src={item.profile_picture} className="avatar" alt={item.name}/>
@@ -37,7 +47,7 @@ export default function App(){
                                             {item.notificationType.isJoinedARelatedGroup && <span className="notification-type">&nbsp; Has joined your group</span>} 
                                             {item.notificationType.isLeftRelatedGroup && <span className="notification-type">&nbsp; left the group</span>} 
                                             {item.notificationType.isComment 
-                                                ? <div><a href="#"><img className="post" src={item.notificationReference} alt="post"/></a></div>
+                                                ? <a href="#"><img className="post" src={item.notificationReference} alt="post"/></a>
                                                 :   <a href="#" className="dark-greyish-blue notification-reference">&nbsp;
                                                         {item.notificationReference}
                                                     </a> 
@@ -45,7 +55,7 @@ export default function App(){
                                         </p>
                                         <p className="notification-duration">{item.howLongAgo}</p> 
                                     </div>
-                                    {item.isRead && <div className="dot"></div>}
+                                    {item.isUnread && <div className="dot"></div>}
                                 </div>
                                 </div>
                                 {item.notificationType.isPrivateMesage && <a href="#" className="private-message">{item.message}</a>}
@@ -58,11 +68,3 @@ export default function App(){
         </div>
     )
 }
-
-/*
-    Make a datastructure that stores unread notifications
-    Each notification should have a function that clears it from that data structure
-    Render each notification reference conditionally with the appropriate context
-    Make the notification count update with the data structure
-
-*/
