@@ -34,7 +34,7 @@ export default function App(){
                         return (
                             <div className={item.isUnread ? "notification-container" : "notification-container notification-read"} key={item.id} onClick={() => markAsRead(item.id)}>
                                 <div className="notification-header">
-                                <a href="#">
+                                <a href="#" aria-label="Visit Profile">
                                     <img src={item.profile_picture} className="avatar" alt={item.name}/>
                                 </a>
                                 <div className="notification-content">
@@ -48,8 +48,8 @@ export default function App(){
                                             {item.notificationType.isJoinedARelatedGroup && <span className="notification-type">&nbsp; Has joined your group</span>} 
                                             {item.notificationType.isLeftRelatedGroup && <span className="notification-type">&nbsp; left the group</span>} 
                                             {item.notificationType.isComment 
-                                                ? <a href="#"><img className="post" src={item.notificationReference} alt="post"/></a>
-                                                :   <a href="#" className="dark-greyish-blue notification-reference">&nbsp;
+                                                ? <a href="#" aria-label="See post"><img className="post" src={item.notificationReference} alt="post"/></a>
+                                                :   <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference">&nbsp;
                                                         {item.notificationReference}
                                                     </a> 
                                             }
