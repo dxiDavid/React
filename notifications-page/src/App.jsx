@@ -1,6 +1,15 @@
 import data from "./data"
 import { useState } from "react"
 
+//importing them since the data is from a local file and won't render once I've built the app for some reason
+import "./assets/avatar-angela-gray.webp"
+import "./assets/avatar-anna-kim.webp"
+import "./assets/avatar-jacob-thompson.webp"
+import "./assets/avatar-kimberly-smith.webp"
+import "./assets/avatar-mark-webber.webp"
+import "./assets/avatar-nathan-peterson.webp"
+import "./assets/avatar-rizky-hasanuddin.webp"
+
 export default function App(){
 
     const [notifications, setNotifications] = useState(data)
@@ -31,7 +40,7 @@ export default function App(){
 
                     {notifications && notifications.map(item => {
                         return (
-                            <div className="notification-container" key={item.id} onClick={() => markAsRead(item.id)}>
+                            <div className={item.isUnread ? "notification-container" : "notification-container notification-read"} key={item.id} onClick={() => markAsRead(item.id)}>
                                 <div className="notification-header">
                                 <a href="#">
                                     <img src={item.profile_picture} className="avatar" alt={item.name}/>

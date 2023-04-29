@@ -107,6 +107,13 @@ select {
   }
 }
 
+/*Utilities*/
+
+.notification-read{
+  background-color: transparent!important;
+}
+
+/*Styles*/
 
 body {
   font-family: 'Plus Jakarta Sans', sans-serif;
@@ -127,8 +134,6 @@ main{
   border-radius: var(--soft-edges);
   width: 100%;
   max-width: 47rem;
-  display: grid;
-  grid-template-columns: 1fr;
 }
 .wrapper{
   display: flex;
@@ -264,3 +269,18 @@ h1{
 }
 
 /*Responsive breakpoint at 500px*/
+
+@media screen and (max-width: 768px) {
+  main{
+    padding: 0;
+  }
+  .notifications{
+    padding: 1rem 0;
+  }
+}
+
+@media screen and (max-width:400px) {
+  .container{
+    padding: 1rem;
+  }
+}
