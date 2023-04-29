@@ -38,8 +38,8 @@ Desktop version
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Frontend Mentor - [@dxiDavid](https://www.frontendmentor.io/profile/dxiDavid)
+- Live Site URL: [live site](https://notifications-page-component.pages.dev/)
 
 ## My process
 
