@@ -1,0 +1,141 @@
+:root {
+
+    /*Global*/
+
+    --Lime-Green: hsl(163, 72%, 41%);
+    --Bright-Red: hsl(356, 69%, 56%);
+
+    --Facebook: hsl(208, 92%, 53%);
+    --Twitter: hsl(203, 89%, 53%);
+    --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+    --YouTube: hsl(348, 97%, 39%);
+
+    --Toggle-Dark-Theme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    --Toggle-Light-Theme: hsl(230, 22%, 74%);
+
+    /*Light mode*/
+  
+    --Very-Pale-Blue-Pattern-bg: hsl(225, 100%, 98%);
+    --Light-Grayish-Blue-Card-bg: hsl(227, 47%, 96%);
+    --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
+    --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+  
+    /*Dark Mode*/
+  
+    --Very-Dark-Blue-bg: hsl(230, 17%, 14%);  
+    --Very-Dark-Blue-Pattern-bg: hsl(232, 19%, 15%); 
+    --Dark-Desaturated-Blue-Card-bg: hsl(228, 28%, 20%); 
+    --Desaturated-Blue-Text : hsl(228, 34%, 66%);
+    --White: hsl(0, 0%, 100%);
+    
+    /*Fonts*/
+  
+      --fs-small: 0.95rem;
+      --fs-medium:1rem;
+      --fs-large:1.5rem;
+      --fw-light: 200;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-semi-bold: 600;
+      --fw-bold: 700;
+      --fw-extra-bold: 900;
+  
+    /*Borders*/
+  
+    --soft-edges:8px;
+    --rounded-edges:20px;
+    --full-circle-border:50%;
+
+    /*Padding*/
+
+    --tiny-padding: 0.5rem;
+    --very-small-padding: 0.75rem;
+    --small-padding: 1rem;
+    --medium-padding: 1.5rem;
+    --large-padding: 2rem;
+    --larger-padding: 3rem;
+
+    /*Gaps*/
+
+    --small-gap: 1rem;
+    --medium-gap: 2rem;
+    --large-gap: 3rem;
+
+  }
+  
+  /*___________________________________________Reset_____________________________________________*/
+  
+  
+  /* Box sizing rules */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Remove default margin */
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+  
+  /* Set core body defaults */
+  
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* Make images easier to work with */
+  
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  body{
+    font-family: 'Inter', sans-serif;
+  }
