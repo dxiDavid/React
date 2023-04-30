@@ -48,10 +48,12 @@ export default function App(){
                                             {item.notificationType.isJoinedARelatedGroup && <span className="notification-type">&nbsp; Has joined your group</span>} 
                                             {item.notificationType.isLeftRelatedGroup && <span className="notification-type">&nbsp; left the group</span>} 
                                             {item.notificationType.isComment 
-                                                ? <a href="#" aria-label="See post"><img className="post" src={item.notificationReference} alt="post"/></a>
-                                                :   <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference">&nbsp;
+                                                ?<span className="post"> <a href="#" aria-label="See post"><img src={item.notificationReference} alt="post"/></a></span>
+                                                :<span> 
+                                                    <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference">&nbsp;
                                                         {item.notificationReference}
-                                                    </a> 
+                                                    </a>
+                                                </span>    
                                             }
                                         </p>
                                         <p className="notification-duration">{item.howLongAgo}</p> 
