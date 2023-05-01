@@ -1,10 +1,26 @@
-import data from "./data"
-import { useState } from "react"
+
+import { useState, useEffect } from "react"
 
 
 export default function App(){
 
-    const [notifications, setNotifications] = useState(data)
+    const [notifications, setNotifications] = useState(null)
+
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const res = await fetch("http://localhost:3000/notifications");
+            if(!res.ok){
+              throw new Error('prob, bob')
+            }
+            const json = await res.json();
+            setNotifications(json);
+          } catch (err) {
+            console.log(err.message);
+          }
+        }
+        fetchData();
+      }, [])
 
     function markAsRead(id){
        setNotifications(prev => prev.map(item => (
@@ -47,18 +63,16 @@ export default function App(){
                                             {item.notificationType.isNewFollower && <span className="notification-type">&nbsp; Followed you</span>}  
                                             {item.notificationType.isJoinedARelatedGroup && <span className="notification-type">&nbsp; Has joined your group</span>} 
                                             {item.notificationType.isLeftRelatedGroup && <span className="notification-type">&nbsp; left the group</span>} 
-                                            {item.notificationType.isComment 
-                                                ?<span className="post"> <a href="#" aria-label="See post"><img src={item.notificationReference} alt="post"/></a></span>
-                                                :<span> 
-                                                    <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference">&nbsp;
-                                                        {item.notificationReference}
-                                                    </a>
-                                                </span>    
-                                            }
+                                            {item.notificationType.isComment ? <></> : <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference">&nbsp;{item.notificationReference}</a>}
                                         </p>
                                         <p className="notification-duration">{item.howLongAgo}</p> 
                                     </div>
-                                    {item.isUnread && <div className="dot"></div>}
+                                    {item.isUnread && <span className="dot"></span>}
+                                    {item.notificationType.isComment 
+                                        && 
+                                        <a href="#" aria-label="visit" className="dark-greyish-blue notification-reference post-reference">&nbsp;
+                                            <img className="post" src={item.notificationReference} alt="post"/>
+                                        </a>}
                                 </div>
                                 </div>
                                 {item.notificationType.isPrivateMesage && <a href="#" className="private-message">{item.message}</a>}

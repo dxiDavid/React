@@ -191,6 +191,7 @@ h1{
 
 .notification-header{
   display: flex;
+  flex-direction: row;
   width: 100%;
   gap: 1rem;
 }
@@ -220,9 +221,9 @@ h1{
 .notification-content{
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: flex-start;
   gap: 0.5rem;
+  width: 100%;
+  position: relative;
 }
 
 .avatar-name{
@@ -250,6 +251,13 @@ h1{
 
 .post{
   max-width: 3rem;
+  margin-top: -1.5rem;
+}
+
+.post-reference{
+  align-self: flex-end;
+  margin-left: auto;
+  margin-right: 0;
 }
 
 .dark-greyish-blue{
@@ -260,7 +268,7 @@ h1{
   width: 0.5rem;
   height: 0.5rem;
   background-color: var(--Red);
-  border-radius: var(--rounded-edges);
+  border-radius: 100vmax;
   margin-top: 0.5rem;
 }
 
