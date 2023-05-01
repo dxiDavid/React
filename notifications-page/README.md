@@ -19,7 +19,7 @@ This is a solution to the [Notifications page challenge on Frontend Mentor](http
 
 ## Overview
 
-This is a fairly simple project with functionality that was not too challenging for a React beginner (At the time of writing this)
+This is a fairly simple project with functionality that was not too challenging for a React beginner (At the time of writing this). At this poit in time if you want to view it you'll have to clone it into your local environment and install the necessary modules.
 
 ### The challenge
 
