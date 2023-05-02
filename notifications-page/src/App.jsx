@@ -1,26 +1,10 @@
 
 import { useState, useEffect } from "react"
-
+import data from "./data.jsx"
 
 export default function App(){
 
-    const [notifications, setNotifications] = useState(null)
-
-    useEffect(() => {
-        const fetchData = async () => {
-          try {
-            const res = await fetch("http://localhost:3000/notifications");
-            if(!res.ok){
-              throw new Error('prob, bob')
-            }
-            const json = await res.json();
-            setNotifications(json);
-          } catch (err) {
-            console.log(err.message);
-          }
-        }
-        fetchData();
-      }, [])
+    const [notifications, setNotifications] = useState(data)
 
     function markAsRead(id){
        setNotifications(prev => prev.map(item => (
@@ -85,3 +69,22 @@ export default function App(){
         </div>
     )
 }
+
+
+// For JSON server and fake API
+
+ // useEffect(() => {
+    //     const fetchData = async () => {
+    //       try {
+    //         const res = await fetch("http://dist/db.json");
+    //         if(!res.ok){
+    //           throw new Error('prob, bob')
+    //         }
+    //         const json = await res.json();
+    //         setNotifications(json);
+    //       } catch (err) {
+    //         console.log(err.message);
+    //       }
+    //     }
+    //     fetchData();
+    //   }, [])
