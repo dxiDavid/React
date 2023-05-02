@@ -2,7 +2,7 @@ export default [
     {
         id: 1,
         name: "Mark Webber",
-        profile_picture: "/public/avatar-mark-webber.webp",
+        profile_picture: "./avatar-mark-webber.webp",
         group: null,
         message:null,
         notificationType: {
@@ -22,7 +22,7 @@ export default [
     {
         id: 2,
         name: "Angela Gray",
-        profile_picture: "/public/avatar-angela-gray.webp",
+        profile_picture: "./avatar-angela-gray.webp",
         group: null,
         message:null,
         notificationType: {
@@ -42,7 +42,7 @@ export default [
     {
         id: 3,
         name: "Jacob Thompson",
-        profile_picture: "/public/avatar-jacob-thompson.webp",
+        profile_picture: "./avatar-jacob-thompson.webp",
         group: "Chess Club",
         message:null,
         notificationType: {
@@ -62,7 +62,7 @@ export default [
     {
         id: 4,
         name: " Rizky Hasanuddin",
-        profile_picture: "/public/avatar-rizky-hasanuddin.webp",
+        profile_picture: "./avatar-rizky-hasanuddin.webp",
         group: null,
         message:`   Hello, thanks for setting up the Chess Club. 
                     I've been a member for a few weeks now and \n 
@@ -84,7 +84,7 @@ export default [
     {
         id: 5,
         name: "Kimberly Smith",
-        profile_picture: "/public/avatar-kimberly-smith.webp",
+        profile_picture: "./avatar-kimberly-smith.webp",
         group: null,
         message:null,
         notificationType: {
@@ -98,13 +98,13 @@ export default [
             isLeftRelatedGroup: false,
         },
         isUnread: true,
-        notificationReference: "/public/image-chess.webp",
+        notificationReference: "./image-chess.webp",
         howLongAgo: "1 week ago"
     },
     {
         id: 6,
         name: "Nathan Peterson",
-        profile_picture: "/public/avatar-nathan-peterson.webp",
+        profile_picture: "./avatar-nathan-peterson.webp",
         group: null,
         message:null,
         notificationType: {
@@ -124,7 +124,7 @@ export default [
     {
         id: 7,
         name: "Anna Kim",
-        profile_picture: "/public/avatar-anna-kim.webp",
+        profile_picture: "./avatar-anna-kim.webp",
         group: "Chess Club",
         message:null,
         notificationType: {
