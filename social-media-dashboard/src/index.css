@@ -5,12 +5,14 @@
     --Lime-Green: hsl(163, 72%, 41%);
     --Bright-Red: hsl(356, 69%, 56%);
 
-    --Facebook: hsl(208, 92%, 53%);
-    --Twitter: hsl(203, 89%, 53%);
-    --Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
-    --YouTube: hsl(348, 97%, 39%);
+    --Facebook-blue: hsl(208, 92%, 53%);
+    --Twitter-blue: hsl(203, 89%, 53%);
+    --Instagram-yellow: hsl(37, 97%, 70%); /*gradient*/
+    --Instagram-pink:hsl(329, 70%, 58%);
+    --YouTube-red: hsl(348, 97%, 39%);
 
-    --Toggle-Dark-Theme: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+    --Toggle-Dark-Theme-blue:hsl(210, 78%, 56%);/*gardient*/
+    --Toggle-Dark-Theme-green: hsl(146, 68%, 55%);
     --Toggle-Light-Theme: hsl(230, 22%, 74%);
 
     /*Light mode*/
@@ -19,20 +21,18 @@
     --Light-Grayish-Blue-Card-bg: hsl(227, 47%, 96%);
     --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
     --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
+    --White: hsl(0, 0%, 100%);
   
     /*Dark Mode*/
-  
-    --Very-Dark-Blue-bg: hsl(230, 17%, 14%);  
-    --Very-Dark-Blue-Pattern-bg: hsl(232, 19%, 15%); 
-    --Dark-Desaturated-Blue-Card-bg: hsl(228, 28%, 20%); 
-    --Desaturated-Blue-Text : hsl(228, 34%, 66%);
-    --White: hsl(0, 0%, 100%);
     
     /*Fonts*/
   
-      --fs-small: 0.95rem;
+      --fs-smallest: 0.75rem;
+      --fs-smaller: 0.85rem;
+      --fs-small: 0.9rem;
       --fs-medium:1rem;
       --fs-large:1.5rem;
+      --fs-larger:3.5rem;
       --fw-light: 200;
       --fw-regular: 400;
       --fw-medium: 500;
@@ -42,7 +42,7 @@
   
     /*Borders*/
   
-    --soft-edges:8px;
+    --soft-edges:5px;
     --rounded-edges:20px;
     --full-circle-border:50%;
 
@@ -136,6 +136,185 @@
     }
   }
 
+  /*_____________utilities______________________*/
+
+  .darkmode{
+    --Very-Dark-Blue-bg: hsl(230, 17%, 14%);  
+    --Very-Dark-Blue-Pattern-bg: hsl(232, 19%, 15%); 
+    --Dark-Desaturated-Blue-Card-bg: hsl(228, 28%, 20%); 
+    --Desaturated-Blue-Text : hsl(228, 34%, 66%);
+    --White: hsl(0, 0%, 100%);
+  }
+
+  .toggle{
+    justify-content: right;
+  }
+
   body{
     font-family: 'Inter', sans-serif;
   }
+
+main{
+  position: relative;
+}
+
+.container{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: var(--medium-gap);
+}
+
+.background{
+  background-color: var(--Very-Pale-Blue-Pattern-bg);
+  padding: 6rem;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  border-radius: 0 0 var(--rounded-edges) var(--rounded-edges);
+}
+
+h1{
+  font-size: var(--fs-large);
+  color: var(--Very-Dark-Blue-Text);
+}
+
+.total-followers{
+  color: var(--Dark-Grayish-Blue-Text);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+}
+
+.header{
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+}
+
+.darkmode-toggle-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.darkmode-text{
+  font-size: var(--fs-small);
+  color: var(--Dark-Grayish-Blue-Text);
+  font-weight: var(--fw-medium);
+}
+
+button{
+  border: 0;
+  padding: 3px;
+  width: 2.5rem;
+  border-radius: 50vmax;
+  cursor: pointer;
+  background-color: var(--Toggle-Light-Theme);
+  display: flex;
+  flex-direction: row;
+}
+
+.circle{
+  padding: 0.5rem;
+  width: 1rem;
+  border-radius: 100vmax;
+  background-color: var(--Light-Grayish-Blue-Card-bg);
+}
+
+.follower-stats-container{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--medium-gap);
+}
+
+.follower-stat{
+  background-color: var(--Light-Grayish-Blue-Card-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: var(--small-gap);
+  padding: 2rem 0;
+  border-radius: var(--soft-edges);
+}
+
+.facebook-blue{
+  border-top: 4px solid var(--Facebook-blue);
+}
+
+.twitter-blue{
+  border-top: 4px solid var(--Twitter-blue);
+}
+
+.instagram-gradient{
+  border-top: 4px solid;
+  border-image: linear-gradient(to right var(--Instagram-yellow), var(--Instagram-pink));
+  border-image-slice: 1;
+}
+
+.youtube-red{
+  border-top: 4px solid var(--YouTube-red);
+}
+
+.profile{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.profile img{
+  display: flex;
+  align-self: center;
+}
+
+.username{
+  font-size: var(--fs-smaller);
+  color: var(--Dark-Grayish-Blue-Text);
+}
+
+.follower-count{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.follower-number{
+  font-size: var(--fs-larger);
+  font-weight: var(--fw-bold);
+  margin: -0.5rem;
+}
+
+.followers-text{
+  font-weight: var(--fw-light);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: var(--fs-smaller);
+}
+
+.follower-change{
+  display: flex;
+  flex-direction: row;
+  gap: 0.25rem;
+}
+
+.follower-change img{
+  display: flex;
+  align-self: center;
+}
+
+.follower-change-text{
+  font-size: var(--fs-smallest);
+  font-weight: var(--fw-bold);
+}
+
+.positive{
+  color: var(--Lime-Green);
+}
+
+.negative{
+  color: var(--Bright-Red);
+}
