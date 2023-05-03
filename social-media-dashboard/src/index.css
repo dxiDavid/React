@@ -11,27 +11,18 @@
     --Instagram-pink:hsl(329, 70%, 58%);
     --YouTube-red: hsl(348, 97%, 39%);
 
-    --Toggle-Dark-Theme-blue:hsl(210, 78%, 56%);/*gardient*/
-    --Toggle-Dark-Theme-green: hsl(146, 68%, 55%);
-    --Toggle-Light-Theme: hsl(230, 22%, 74%);
-
-    /*Light mode*/
-  
-    --Very-Pale-Blue-Pattern-bg: hsl(225, 100%, 98%);
-    --Light-Grayish-Blue-Card-bg: hsl(227, 47%, 96%);
-    --Dark-Grayish-Blue-Text: hsl(228, 12%, 44%);
-    --Very-Dark-Blue-Text: hsl(230, 17%, 14%);
-    --White: hsl(0, 0%, 100%);
-  
-    /*Dark Mode*/
+    --Dark-Theme-blue:hsl(210, 78%, 56%);/*gardient*/
+    --Dark-Theme-green: hsl(146, 68%, 55%);
+    --Theme: hsl(230, 22%, 74%);
     
     /*Fonts*/
   
       --fs-smallest: 0.75rem;
-      --fs-smaller: 0.85rem;
+      --fs-smaller: 0.725rem;
       --fs-small: 0.9rem;
       --fs-medium:1rem;
       --fs-large:1.5rem;
+      --fs-slightly-larger:2rem;
       --fs-larger:3.5rem;
       --fw-light: 200;
       --fw-regular: 400;
@@ -57,6 +48,7 @@
 
     /*Gaps*/
 
+    --very-small-gap: 0.25rem;
     --small-gap: 1rem;
     --medium-gap: 2rem;
     --large-gap: 3rem;
@@ -138,15 +130,30 @@
 
   /*_____________utilities______________________*/
 
-  .darkmode{
-    --Very-Dark-Blue-bg: hsl(230, 17%, 14%);  
-    --Very-Dark-Blue-Pattern-bg: hsl(232, 19%, 15%); 
-    --Dark-Desaturated-Blue-Card-bg: hsl(228, 28%, 20%); 
-    --Desaturated-Blue-Text : hsl(228, 34%, 66%);
-    --White: hsl(0, 0%, 100%);
+  .lightmode{
+    --Pattern-bg: hsl(227, 100%, 98%);
+    --Page-bg: hsl(0, 0%, 100%);
+    --Card-bg: hsl(227, 47%, 96%);
+    --light-Text: hsl(228, 12%, 44%);
+    --Dark-Text: hsl(230, 17%, 14%);
+    --primary-font-Color: hsl(230, 17%, 14%);
+    --secondary-font-Color: hsl(228, 12%, 44%);
+    --hover-background: hsl(233, 17%, 91%);
+    --Theme: hsl(230, 22%, 74%);
   }
 
-  .toggle{
+  .darkmode{
+    --Pattern-bg: hsl(230, 17%, 14%);  
+    --Page-bg: hsl(232, 19%, 15%); 
+    --Card-bg: hsl(228, 28%, 20%); 
+    --Dark-Text : hsl(228, 34%, 66%); 
+    --primary-font-Color: hsl(0, 0%, 100%);
+    --secondary-font-Color: hsl(228, 34%, 66%);
+    --hover-background: hsl(229, 28%, 27%);
+  }
+
+  .darkmode button{
+    background-image: linear-gradient(to right, var(--Dark-Theme-blue), var(--Dark-Theme-green));
     justify-content: right;
   }
 
@@ -155,7 +162,10 @@
   }
 
 main{
+  min-height: 100vh;
   position: relative;
+  z-index: 0;
+  background-color: var(--Page-bg);
 }
 
 .container{
@@ -163,10 +173,13 @@ main{
   display: flex;
   flex-direction: column;
   gap: var(--medium-gap);
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 74rem;
 }
 
 .background{
-  background-color: var(--Very-Pale-Blue-Pattern-bg);
+  background-color: var(--Pattern-bg);
   padding: 6rem;
   width: 100%;
   position: absolute;
@@ -176,11 +189,11 @@ main{
 
 h1{
   font-size: var(--fs-large);
-  color: var(--Very-Dark-Blue-Text);
+  color: var(--primary-font-Color);
 }
 
 .total-followers{
-  color: var(--Dark-Grayish-Blue-Text);
+  color: var(--secondary-font-Color);
   font-size: var(--fs-small);
   font-weight: var(--fw-medium);
 }
@@ -200,7 +213,7 @@ h1{
 
 .darkmode-text{
   font-size: var(--fs-small);
-  color: var(--Dark-Grayish-Blue-Text);
+  color: var(--secondary-font-Color);
   font-weight: var(--fw-medium);
 }
 
@@ -210,51 +223,73 @@ button{
   width: 2.5rem;
   border-radius: 50vmax;
   cursor: pointer;
-  background-color: var(--Toggle-Light-Theme);
+  background-color: var(--Theme);
   display: flex;
   flex-direction: row;
+}
+
+button:hover{
+  background-image: linear-gradient(to right, var(--Dark-Theme-blue), var(--Dark-Theme-green));
 }
 
 .circle{
   padding: 0.5rem;
   width: 1rem;
   border-radius: 100vmax;
-  background-color: var(--Light-Grayish-Blue-Card-bg);
+  background-color: var(--Card-bg);
 }
 
 .follower-stats-container{
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-areas:
+    "facebook"
+    "twitter"
+    "instagram"
+    "youtube"
+  ;
   gap: var(--medium-gap);
 }
 
+.border-class{
+  border-radius: var(--soft-edges) var(--soft-edges) 1rem 1rem;
+  padding: 0.25rem 0 0 0;
+}
+
 .follower-stat{
-  background-color: var(--Light-Grayish-Blue-Card-bg);
+  background-color: var(--Card-bg);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--small-gap);
-  padding: 2rem 0;
-  border-radius: var(--soft-edges);
+  padding: 2rem 2rem 1.5rem 2rem;
+  border-radius: 0 0 var(--soft-edges) var(--soft-edges);
+  cursor: pointer;
+  height: 100%;
+}
+
+.follower-stat:hover{
+  background-color: var(--hover-background);
 }
 
 .facebook-blue{
-  border-top: 4px solid var(--Facebook-blue);
+  background-color: var(--Facebook-blue);
+  grid-area: facebook;
 }
 
 .twitter-blue{
-  border-top: 4px solid var(--Twitter-blue);
+  background-color: var(--Twitter-blue);
+  grid-area: twitter;
 }
 
 .instagram-gradient{
-  border-top: 4px solid;
-  border-image: linear-gradient(to right var(--Instagram-yellow), var(--Instagram-pink));
-  border-image-slice: 1;
+  background-image: linear-gradient(to right, hsl(37, 97%, 70%),hsl(329, 70%, 58%));
+  grid-area: instagram;
 }
 
 .youtube-red{
-  border-top: 4px solid var(--YouTube-red);
+  background-color: var(--YouTube-red);
+  grid-area: youtube;
 }
 
 .profile{
@@ -272,7 +307,8 @@ button{
 
 .username{
   font-size: var(--fs-smaller);
-  color: var(--Dark-Grayish-Blue-Text);
+  color: var(--secondary-font-Color);
+  font-weight: var(--fw-bold);
 }
 
 .follower-count{
@@ -280,6 +316,7 @@ button{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--primary-font-Color);
 }
 
 .follower-number{
@@ -290,15 +327,16 @@ button{
 
 .followers-text{
   font-weight: var(--fw-light);
-  letter-spacing: 2px;
+  letter-spacing: 5px;
   text-transform: uppercase;
   font-size: var(--fs-smaller);
+  color: var(--secondary-font-Color);
 }
 
 .follower-change{
   display: flex;
   flex-direction: row;
-  gap: 0.25rem;
+  gap: var(--very-small-gap);
 }
 
 .follower-change img{
@@ -317,4 +355,155 @@ button{
 
 .negative{
   color: var(--Bright-Red);
+}
+
+h2{
+  color: var(--primary-font-Color);
+}
+
+.activity-stats-container{
+  display: grid;
+  grid-template-areas: 
+    "one"
+    "two"
+    "three"
+    "four"
+    "five"
+    "six"
+    "seven"
+    "eight"
+  ;
+  gap: var(--small-gap);
+}
+
+.activity-stats-container > :nth-child(1){
+  grid-area: one;
+}
+.activity-stats-container > :nth-child(2){
+  grid-area: two;
+}
+.activity-stats-container > :nth-child(3){
+  grid-area: three;
+}
+.activity-stats-container > :nth-child(4){
+  grid-area: four;
+}
+.activity-stats-container > :nth-child(5){
+  grid-area: five;
+}
+.activity-stats-container > :nth-child(6){
+  grid-area: six;
+}
+.activity-stats-container > :nth-child(7){
+  grid-area: seven;
+}
+.activity-stats-container > :nth-child(8){
+  grid-area: eight;
+}
+
+.activity-stat{
+  background-color: var(--Card-bg);
+  padding: var(--medium-padding) var(--medium-padding) var(--very-small-padding) var(--medium-padding);
+  display: flex;
+  flex-direction: column;
+  gap: var(--small-gap);
+  border-radius: var(--soft-edges);
+  cursor: pointer;
+}
+
+.activity-stat:hover{
+  background-color: var(--hover-background);
+}
+
+.platform{
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-smallest);
+  font-weight: var(--fw-bold);
+  color: var(--secondary-font-Color);
+}
+
+.platform img{
+  display: flex;
+  align-self: center;
+}
+
+.activity-stats-values{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.activity-stat-change{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--very-small-gap);
+  font-size: var(--fs-smallest);
+  font-weight: var(--fw-bold);
+}
+
+.activity-stat-change img{
+  display: flex;
+  align-self: center;
+}
+
+.activity-value{
+  font-size: var(--fs-slightly-larger);
+  font-weight: var(--fw-bold);
+  color: var(--primary-font-Color);
+}
+
+@media screen and (min-width:768px) {
+  .follower-stats-container{
+    grid-template-areas: 
+      "facebook twitter"
+      "instagram youtube"
+    ;
+  }
+  .activity-stats-container{
+    grid-template-areas: 
+      "one five"
+      "two six"
+      "three seven"
+      "four eight"
+      ;
+    gap: var(--medium-gap);
+  }
+  .header{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .darkmode-toggle-div{
+    gap: var(--small-gap);
+  }
+  h1{
+    font-size: var(--fs-slightly-larger);
+  }
+  .total-followers{
+    font-weight: var(--fw-bold);
+  }
+  hr{
+    display: none;
+  }
+}
+
+@media screen and (min-width:1024px) {
+  .follower-stats-container{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "facebook twitter instagram youtube"
+    ;
+  }
+  .activity-stats-container{
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+      "one five two six"
+      "three seven four eight"
+    ;
+    gap: var(--medium-gap);
+  }
+  .background{
+    padding: 8rem;
+  }
 }

@@ -6,7 +6,7 @@ function App() {
 
   const[followersStats, setFolowerStats] = useState(data)
   const[activityStats, setActivityStats] = useState(data)
-  const[darkmaode, setDarkMode] = useState()
+  const[darkmode, setDarkMode] = useState()
 
   
 
@@ -43,31 +43,32 @@ function App() {
             let borderClass;
               switch (item.name) {
                 case "facebook":
-                  borderClass = "follower-stat facebook-blue";
+                  borderClass = "border-class facebook-blue";
                   break;
                 case 'twitter':
-                  borderClass = "follower-stat twitter-blue";
+                  borderClass = "border-class twitter-blue";
                   break;
                 case 'instagram':
-                  borderClass = "follower-stat instagram-gradient";
+                  borderClass = "border-class instagram-gradient";
                   break;
                 case 'youtube':
-                  borderClass = "follower-stat youtube-red";
+                  borderClass = "border-class youtube-red";
                   break;
                 default:
-                  borderClass = "follower-stat";
+                  borderClass = "border-class";
               }
 
             return(
               <div className={borderClass} key={index}>
-                  <div className="profile">
-                    <img src={item.logo} alt={item.name}></img>
-                    <p className="username">{item.username}</p>
-                  </div>
-                  <div >
+                  <div className="follower-stat">
+                    <div className="profile">
+                      <img src={item.logo} alt={item.name}></img>
+                      <p className="username">{item.username}</p>
+                    </div>
+                    <div >
                     <p className="follower-count">
                       <span className="follower-number">{item.followers}</span>
-                      <span className="followers-text">Followers</span>
+                      {item.name === "youtube" ? <span className="followers-text">Subscribers</span> :<span className="followers-text">Followers</span>}
                     </p>
                   </div>
                   <div className="follower-change">
@@ -75,6 +76,7 @@ function App() {
                     <p className={item.followerChangeIsPositive ? "follower-change-text positive" : "follower-change-text negative"}>
                       {item.followerchange} Today
                     </p>
+                  </div>
                   </div>
               </div>
             )
@@ -91,7 +93,7 @@ function App() {
 
           {activityStats && activityStats.map((item, index) => {
             return(
-              <div className="activity-stat" key={index}>
+              <div className={`activity-stat activity-stat-${index}`} key={index}>
                 <div className="platform">
                   {item.name === "twitter" && <p>Retweets</p>}
                   {item.name === "instagram" && <p>Profile views</p>}
@@ -100,8 +102,8 @@ function App() {
                   <img src={item.logo}/>
                 </div>
                 <div className="activity-stats-values">
-                  <p className="stat-value">{item.activityChange}</p>
-                  <div>
+                  <p className="activity-value">{item.activity}</p>
+                  <div className="activity-stat-change">
                     {item.followerChangeIsPositive ? <img src="./assets/icon-up.svg"/> : <img src="./assets/icon-down.svg"/>}
                     <p className={item.activityChangeIsPositive ? "activity-change-text positive" : "activity-change-text negative"}>
                       {item.activityChange}
@@ -118,17 +120,17 @@ function App() {
 
           {activityStats && activityStats.map((item, index) => {
             return(
-              <div className="activity-stat" key={index}>
+              <div className={`activity-stat like-stat-${index}`} key={index}>
                 <div className="platform">
                   <p>Likes</p>
                   <img src={item.logo}/>
                 </div>
                 <div className="activity-stats-values">
-                  <p className="stat-value">{item.activityChange}</p>
-                  <div>
-                  {item.followerChangeIsPositive ? <img src="./assets/icon-up.svg"/> : <img src="./assets/icon-down.svg"/>}
-                  <p className={item.activityChangeIsPositive ? "activity-change-text positive" : "activity-change-text negative"}>
-                      {item.activityChange}
+                  <p className="activity-value">{item.likes}</p>
+                  <div className="activity-stat-change">
+                    {item.likeChangeIsPositive ? <img src="./assets/icon-up.svg"/> : <img src="./assets/icon-down.svg"/>}
+                    <p className={item.likeChangeIsPositive ? "activity-change-text positive" : "activity-change-text negative"}>
+                      {item.likeChange}
                     </p>
                   </div>
                 </div>
