@@ -13,7 +13,7 @@ export default function Views(props){
                 <div className="activity-stats-values">
                   <p className="activity-value">{props.activity}</p>
                   <div className="activity-stat-change">
-                    {props.activityChangeIsPositive ? <img src="./assets/icon-up.svg"/> : <img src="./assets/icon-down.svg"/>}
+                    {props.activityChangeIsPositive ? <img src="./assets/icon-up.svg" alt="arrow-up"/> : <img src="./assets/icon-down.svg" alt="arrow-down"/>}
                     <p className={props.activityChangeIsPositive ? "activity-change-text positive" : "activity-change-text negative"}>
                       {props.activityChange}
                     </p>

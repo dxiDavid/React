@@ -34,7 +34,7 @@ export default function Followers(props){
           </p>
         </div>
         <div className="follower-change">
-          {props.followerChangeIsPositive ? <img src="./assets/icon-up.svg"/> : <img src="./assets/icon-down.svg"/>}
+          {props.followerChangeIsPositive ? <img src="./assets/icon-up.svg" alt="arrow-up"/> : <img src="./assets/icon-down.svg" alt="arrow-down"/>}
           <p className={props.followerChangeIsPositive ? "follower-change-text positive" : "follower-change-text negative"}>
             {props.followerchange} Today
           </p>
