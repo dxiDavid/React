@@ -194,7 +194,7 @@ main{
 
 .background{
   background-color: var(--Pattern-bg);
-  padding: 6rem;
+  padding: 8rem;
   width: 100%;
   position: absolute;
   z-index: -1;
@@ -391,13 +391,13 @@ h2{
   display: grid;
   grid-template-areas: 
     "one"
-    "two"
-    "three"
-    "four"
     "five"
+    "two"
     "six"
+    "three"
     "seven"
     "eight"
+    "four"
   ;
   gap: var(--small-gap);
 }
