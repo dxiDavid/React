@@ -32,7 +32,7 @@ function App() {
             <hr/>
             <div className="darkmode-toggle-div">
               <p className="darkmode-text">Dark Mode</p>
-              <button type="button" onClick={toggleDarkMode}>
+              <button type="button" aria-label="Toggle Dark Mode" onClick={toggleDarkMode}>
                 <div className="circle"></div>
               </button>
             </div>
