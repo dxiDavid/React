@@ -14,6 +14,18 @@
     --Dark-Theme-blue:hsl(210, 78%, 56%);/*gardient*/
     --Dark-Theme-green: hsl(146, 68%, 55%);
     --Theme: hsl(230, 22%, 74%);
+
+    /*defaults*/
+
+    --Pattern-bg: hsl(227, 100%, 98%);
+    --Page-bg: hsl(0, 0%, 100%);
+    --Card-bg: hsl(227, 47%, 96%);
+    --light-Text: hsl(228, 12%, 44%);
+    --Dark-Text: hsl(230, 17%, 14%);
+    --primary-font-Color: hsl(230, 17%, 14%);
+    --secondary-font-Color: hsl(228, 12%, 44%);
+    --hover-background: hsl(233, 17%, 91%);
+    --Theme: hsl(230, 22%, 74%);
     
     /*Fonts*/
   
@@ -52,6 +64,13 @@
     --small-gap: 1rem;
     --medium-gap: 2rem;
     --large-gap: 3rem;
+
+    /*timing*/
+
+    --lazy: 2s;
+    --slow: 1s;
+    --medium: 500ms;
+    --fast: 300ms;
 
   }
   
@@ -130,26 +149,18 @@
 
   /*_____________utilities______________________*/
 
-  .lightmode{
-    --Pattern-bg: hsl(227, 100%, 98%);
-    --Page-bg: hsl(0, 0%, 100%);
-    --Card-bg: hsl(227, 47%, 96%);
-    --light-Text: hsl(228, 12%, 44%);
-    --Dark-Text: hsl(230, 17%, 14%);
-    --primary-font-Color: hsl(230, 17%, 14%);
-    --secondary-font-Color: hsl(228, 12%, 44%);
-    --hover-background: hsl(233, 17%, 91%);
-    --Theme: hsl(230, 22%, 74%);
-  }
-
   .darkmode{
-    --Pattern-bg: hsl(230, 17%, 14%);  
-    --Page-bg: hsl(232, 19%, 15%); 
+    --Pattern-bg: hsl(232, 19%, 17%) ;  
+    --Page-bg: hsl(230, 17%, 14%); 
     --Card-bg: hsl(228, 28%, 20%); 
     --Dark-Text : hsl(228, 34%, 66%); 
     --primary-font-Color: hsl(0, 0%, 100%);
     --secondary-font-Color: hsl(228, 34%, 66%);
     --hover-background: hsl(229, 28%, 27%);
+  }
+
+  .darkmode main{
+    background-color: var(--Page-bg);
   }
 
   .darkmode button{
@@ -163,6 +174,9 @@
 
 main{
   min-height: 100vh;
+}
+
+.app{
   position: relative;
   z-index: 0;
   background-color: var(--Page-bg);
@@ -209,12 +223,21 @@ h1{
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  cursor:default;
 }
 
 .darkmode-text{
   font-size: var(--fs-small);
   color: var(--secondary-font-Color);
   font-weight: var(--fw-medium);
+}
+
+.darkmode-toggle-div p:hover{
+  color: var(--primary-font-Color);
+}
+
+.logo{
+  animation: move-from-right 2s ease;
 }
 
 button{
@@ -253,6 +276,7 @@ button:hover{
 .border-class{
   border-radius: var(--soft-edges) var(--soft-edges) 1rem 1rem;
   padding: 0.25rem 0 0 0;
+  animation: move-up var(--lazy) ease;
 }
 
 .follower-stat{
@@ -266,6 +290,7 @@ button:hover{
   border-radius: 0 0 var(--soft-edges) var(--soft-edges);
   cursor: pointer;
   height: 100%;
+  animation: move-up var(--lazy) ease;
 }
 
 .follower-stat:hover{
@@ -317,6 +342,7 @@ button:hover{
   justify-content: center;
   align-items: center;
   color: var(--primary-font-Color);
+  animation: reveal var(--lazy) ease;
 }
 
 .follower-number{
@@ -452,6 +478,7 @@ h2{
   font-size: var(--fs-slightly-larger);
   font-weight: var(--fw-bold);
   color: var(--primary-font-Color);
+  animation: move-from-left 2.5s ease;
 }
 
 @media screen and (min-width:768px) {
@@ -498,12 +525,52 @@ h2{
   .activity-stats-container{
     grid-template-columns: repeat(4, 1fr);
     grid-template-areas: 
-      "one five two six"
-      "three seven four eight"
+      "one five six two"
+      "three seven eight four"
     ;
     gap: var(--medium-gap);
   }
   .background{
     padding: 8rem;
+  }
+}
+
+@keyframes move-up {
+  from{
+    transform: translateY(0.75rem);
+  }
+  to{
+    transform: translateY(0)
+  }
+}
+
+@keyframes reveal {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes move-from-left {
+  from{
+    transform: translateX(3rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes move-from-right {
+  from{
+    transform: translateX(-2rem);
+    opacity: 0;
+  }
+  to{
+    transform: translateX(0);
+    opacity: 1;
   }
 }
