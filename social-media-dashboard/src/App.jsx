@@ -13,9 +13,7 @@ function App() {
   const[activityStats, setActivityStats] = useState(data)
   const[isDark, setIsDark] = useState(true)
 
-  const body = document.querySelector("body")
-
-  const toggleDarkMode = (e) =>{
+  const toggleDarkMode = () =>{
     setIsDark(!isDark)
   }
   
@@ -31,7 +29,7 @@ function App() {
             </div>
             <hr/>
             <div className="darkmode-toggle-div">
-              <p className="darkmode-text">Dark Mode</p>
+              <p className="darkmode-text">{isDark ? "Light" : "Dark"} Mode</p>
               <button type="button" aria-label="Toggle Dark Mode" onClick={toggleDarkMode}>
                 <div className="circle"></div>
               </button>
