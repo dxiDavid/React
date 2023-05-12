@@ -1,0 +1,127 @@
+:root {
+
+    /*Global*/
+    --White: hsl(0, 0%, 100%);
+    --Light-grayish-violet: hsl(270, 3%, 87%);
+    --Dark-grayish-violet: hsl(279, 6%, 55%);
+    --Very-dark-violet: hsl(278, 68%, 11%);
+
+    /*Fonts*/
+  
+      --fs-smallest: 0.75rem;
+      --fs-smaller: 0.725rem;
+      --fs-small: 0.9rem;
+      --fs-medium:1rem;
+      --fs-large:1.5rem;
+      --fs-slightly-larger:2rem;
+      --fs-larger:3.5rem;
+      --fw-light: 200;
+      --fw-regular: 400;
+      --fw-medium: 500;
+      --fw-semi-bold: 600;
+      --fw-bold: 700;
+      --fw-extra-bold: 900;
+  
+    /*Borders*/
+  
+    --soft-edges:5px;
+    --rounded-edges:20px;
+    --full-circle-border:100vmax;
+
+    /*Padding*/
+
+    --tiny-padding: 0.5rem;
+    --very-small-padding: 0.75rem;
+    --small-padding: 1rem;
+    --medium-padding: 1.5rem;
+    --large-padding: 2rem;
+    --larger-padding: 3rem;
+
+    /*Gaps*/
+
+    --very-small-gap: 0.25rem;
+    --small-gap: 1rem;
+    --medium-gap: 2rem;
+    --large-gap: 3rem;
+
+    /*timing*/
+
+    --lazy: 2s;
+    --slow: 1s;
+    --medium: 500ms;
+    --fast: 300ms;
+
+  }
+  
+  /*___________________________________________Reset_____________________________________________*/
+  
+  
+  /* Box sizing rules */
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Remove default margin */
+  
+  body,
+  h1,
+  h2,
+  h3,
+  h4,
+  p,
+  figure,
+  blockquote,
+  dl,
+  dd {
+    margin: 0;
+  }
+  
+  /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+  
+  ul[role="list"],
+  ol[role="list"] {
+    list-style: none;
+  }
+  
+  /* Set core body defaults */
+  
+  body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+  }
+  
+  /* Make images easier to work with */
+  
+  img,
+  picture {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Inherit fonts for inputs and buttons */
+  
+  input,
+  button,
+  textarea,
+  select {
+    font: inherit;
+  }
+  
+  /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+  
+  @media (prefers-reduced-motion: reduce) {
+  
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }

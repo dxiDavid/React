@@ -249,6 +249,7 @@ button{
   background-color: var(--Theme);
   display: flex;
   flex-direction: row;
+  justify-content: left;
 }
 
 button:hover{
