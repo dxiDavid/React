@@ -125,3 +125,53 @@
       transition-duration: 0.01ms !important;
     }
   }
+
+body{
+  font-family: 'Inter', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.container{
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas: 
+    "purple-div"
+    "card-front"
+    "card-back"
+    "white-div"
+  ;
+}
+
+.purple{
+  background-color: var(--Very-dark-violet);
+  grid-area: purple-div;
+  
+}
+
+.images{
+  grid-area: cards-div;
+}
+
+.grey-card{
+  background-image: url("./bg-card-back.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  /* padding: var(--small-padding); */
+  
+}
+
+.card-details{
+  background-image: url("./bg-card-front.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: var(--small-padding);
+}
+
+.form{
+  grid-area: white-div;
+  background-color: var(--White);
+}
