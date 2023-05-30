@@ -1,32 +1,19 @@
+import laws from './laws'
 
 export default function Projects(){
+
     return(
         <div className="projects-cotainer">
             <div className="projects">
-                <div className="project">
-                    <div className="image-container"></div>
-                    <h2>Project title</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Accusantium doloremque amet veritatis quis
-                    </p>
-                </div>
-                <div className="project">
-                    <div className="image-container"></div>
-                    <h2>Project title</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Accusantium doloremque amet veritatis quis
-                    </p>
-                </div>
-                <div className="project">
-                    <div className="image-container"></div>
-                    <h2>Project title</h2>
-                    <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
-                        Accusantium doloremque amet veritatis quis
-                    </p>
-                </div>
+                {laws && laws.map((law, index) => {
+                    return(
+                        <div className="project" key={index}>
+                        <div className="image-container">
+                            <img src={law.image} alt="law"/>
+                        </div>
+                    </div>
+                    )
+                })}
             </div>
         </div>
     )
