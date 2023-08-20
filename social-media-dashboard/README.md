@@ -19,7 +19,7 @@ This is a solution to the [Social media dashboard with theme switcher challenge 
 
 ## Overview
 
-Thos challenge forced me to learn a lot of new concepts to get it to work. I enjoyed building it with ``CSS Grid`` since I'm now getting more comfortable using it. The layout would have been very difficult to do with ``Flexbox``
+This challenge forced me to learn a lot of new concepts to get it to work. I enjoyed building it with ``CSS Grid`` since I'm now getting more comfortable using it. The layout would have been very difficult to do with ``Flexbox``
 
 ### The challenge
 
